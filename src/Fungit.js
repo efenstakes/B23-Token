@@ -11,7 +11,7 @@ import './App.css';
 import Token from './artifacts/contracts/B23.sol/B23.json'
 import { VSpacerComponent } from './components/v_spacer/VSpacer.component';
 
-const TokenContractAddress = "0xB7f8BC63BbcaD18155201308C8f3540b07f84F5e"
+const TokenContractAddress = "0x35b5bEF818c048face6dF0d71f271272A428909C"
 function FungitPage() {
 
   const [currentAddress, setCurrentAddress] = useState()
