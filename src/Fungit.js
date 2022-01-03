@@ -3,13 +3,12 @@ import { useEffect, useState } from 'react'
 import { ethers } from 'ethers'
 
 
-
-import logo from './logo.svg';
 import './App.css';
 
 
 import Token from './artifacts/contracts/B23.sol/B23.json'
 import { VSpacerComponent } from './components/v_spacer/VSpacer.component';
+
 
 const TokenContractAddress = "0x35b5bEF818c048face6dF0d71f271272A428909C"
 function FungitPage() {
@@ -25,10 +24,15 @@ function FungitPage() {
 
   const selectAnAddress = async ()=> {
     console.log("selectAnAddress")
-    const ret = await window.ethereum.request({ method: 'eth_requestAccounts' })
-    console.log("ret ", ret)
-    if( ret ) {
-      setCurrentAddress(ret[0])
+    
+    try {
+      const ret = await window.ethereum.request({ method: 'eth_requestAccounts' })
+      console.log("ret ", ret)
+      if( ret ) {
+        setCurrentAddress(ret[0])
+      }
+    } catch(e) {
+      console.log("selectAnAddress error ", e)
     }
   }
 
@@ -82,11 +86,11 @@ function FungitPage() {
 
 
   useEffect(() => {
-      checkBalance()
+    checkBalance()
   }, [])
 
 
-  if( currentAddress ) {
+  if( !currentAddress ) {
     return (
       <div className="center_page">
 
