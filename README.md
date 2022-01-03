@@ -1,4 +1,4 @@
-# B23 Token (ERC20)
+# B23 Token (ERC20) Dapp
 
 This project demonstrates how ERC20 tokens work. B23 is an ERC20 contract which is deployed to rinkeby. A react app is used to give an interface to the deployed contract.
 
