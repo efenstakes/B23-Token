@@ -1,8 +1,20 @@
-# Basic Sample Hardhat Project
+# B23 Token (ERC20)
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts.
+This project demonstrates how ERC20 tokens work. B23 is an ERC20 contract which is deployed to rinkeby. A react app is used to give an interface to the deployed contract.
 
-Try running some of the following tasks:
+
+
+To run it on the rinkeby testnet:
+
+```shell
+yarn
+yarn start
+```
+
+Be sure to get some test eth from a testnet.
+
+
+To run the Dapp locally:
 
 ```shell
 npx hardhat accounts
@@ -10,6 +22,10 @@ npx hardhat compile
 npx hardhat clean
 npx hardhat test
 npx hardhat node
-node scripts/sample-script.js
-npx hardhat help
+node scripts/deploy.js
+
+yarn
+yarn start
 ```
+
+Be sure to replace TokenContractAddress variable in Fungit.js before intreracting with the contract.
